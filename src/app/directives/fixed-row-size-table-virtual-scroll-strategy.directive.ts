@@ -143,6 +143,7 @@ export function fixedSizeVirtualScrollStrategyFactory(
 
 @Directive({
   selector: "cdk-virtual-scroll-viewport[rowHeight], app-table-virtual-scroll-viewport[rowHeight]",
+  standalone: true,
   providers: [
     {
       provide: VIRTUAL_SCROLL_STRATEGY,

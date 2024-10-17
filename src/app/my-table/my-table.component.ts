@@ -1,8 +1,16 @@
 import { ArrayDataSource } from "@angular/cdk/collections";
 import { Component } from "@angular/core";
+import { VirtualTableDirective } from "../directives/virtual-table.directive";
+import { MatTableModule } from "@angular/material/table";
+import { TableVirtualScrollViewportComponent } from "../table-virtual-scroll-viewport/table-virtual-scroll-viewport.component";
+import { CommonModule } from "@angular/common";
+import { FixedRowSizeTableVirtualScrollStrategyDirective } from "../directives/fixed-row-size-table-virtual-scroll-strategy.directive";
 
 @Component({
   selector: "app-my-table",
+  standalone: true,
+  imports: [CommonModule, MatTableModule, TableVirtualScrollViewportComponent, 
+    VirtualTableDirective, FixedRowSizeTableVirtualScrollStrategyDirective],
   templateUrl: "./my-table.component.html",
   styleUrls: ["./my-table.component.css"]
 })

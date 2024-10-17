@@ -13,6 +13,7 @@ import { TableVirtualScrollViewportComponent } from "../table-virtual-scroll-vie
  */
 @Directive({
   selector: '[mat-table][appVirtualDataSource], mat-table[appVirtualDataSource]',
+  standalone: true,
   providers: [{ provide: STICKY_POSITIONING_LISTENER, useExisting: VirtualTableDirective }]
 })
 export class VirtualTableDirective<T> implements CdkVirtualScrollRepeater<T>, CollectionViewer {

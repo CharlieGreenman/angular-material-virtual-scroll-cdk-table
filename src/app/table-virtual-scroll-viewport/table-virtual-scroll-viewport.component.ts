@@ -42,6 +42,8 @@ import {
   ViewportRuler,
   ExtendedScrollToOptions
 } from "@angular/cdk/scrolling";
+import { CommonModule } from "@angular/common";
+import { FixedRowSizeTableVirtualScrollStrategyDirective } from "../directives/fixed-row-size-table-virtual-scroll-strategy.directive";
 
 /** Checks if the given ranges are equal. */
 function rangesEqual(r1: ListRange, r2: ListRange): boolean {
@@ -67,6 +69,8 @@ const SCROLL_SCHEDULER =
   selector: "app-table-virtual-scroll-viewport",
   templateUrl: "table-virtual-scroll-viewport.component.html",
   styleUrls: ["table-virtual-scroll-viewport.component.scss"],
+  standalone: true,
+  imports: [CommonModule, TableVirtualScrollViewportComponent, FixedRowSizeTableVirtualScrollStrategyDirective],
   host: {
     class: "app-table-virtual-scroll-viewport",
     "[class.app-table-virtual-scroll-orientation-horizontal]":
