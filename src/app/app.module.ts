@@ -1,5 +1,5 @@
 import { ScrollingModule } from "@angular/cdk/scrolling";
-import { NgModule } from "@angular/core";
+import { NgModule, provideExperimentalZonelessChangeDetection } from "@angular/core";
 import { MatTableModule } from "@angular/material/table";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -23,7 +23,9 @@ import { TableVirtualScrollViewportComponent } from './table-virtual-scroll-view
     ScrollingModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [
+    provideExperimentalZonelessChangeDetection()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
