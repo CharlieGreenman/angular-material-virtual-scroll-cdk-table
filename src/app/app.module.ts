@@ -12,8 +12,7 @@ import { MyTableComponent } from "./my-table/my-table.component";
   imports: [
     BrowserModule,
     MyTableComponent,
-    BrowserAnimationsModule,
-    ScrollingModule
+    BrowserAnimationsModule
   ],
   providers: [
     provideExperimentalZonelessChangeDetection()
