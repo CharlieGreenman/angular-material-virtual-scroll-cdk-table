@@ -1,3 +1,3 @@
-# virtual-scroll-cdk-table-test-9cqjng
+# Solves virtual scrolling with angular data table 
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/CharlieGreenman/virtual-scroll-cdk-table-test-9cqjng)
+We could allow for virtual dom alongside angular as of now and solve everything 
