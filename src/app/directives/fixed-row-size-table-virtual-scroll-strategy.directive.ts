@@ -112,7 +112,7 @@ export class FixedRowSizeTableVirtualScrollStrategy
 
     // Clamp the new range between 0 and dataLength
     const newStart = Math.max(0, firstVisibleIndex - bufferedItems);
-    const newEnd = Math.min(dataLength - 1, firstVisibleIndex + itemsToRender);
+    const newEnd = Math.min(dataLength, firstVisibleIndex + itemsToRender);
 
     const newRange = {
       start: newStart,
@@ -125,7 +125,10 @@ export class FixedRowSizeTableVirtualScrollStrategy
   }
 
   protected updateTotalContentSize() {
-    this.viewport?.setTotalContentSize(this.viewport.getDataLength() * this.rowHeight);
+    if (this.viewport) {
+      const totalSize = this.headerHeight + (this.viewport.getDataLength() * this.rowHeight);
+      this.viewport.setTotalContentSize(totalSize);
+    }
   }
 }
 
